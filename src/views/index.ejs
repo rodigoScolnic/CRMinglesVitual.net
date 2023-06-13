@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <section class="main-section">
+        <div class="form-section">
+            <form action="">
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label class="form-label" for="firstname">Nombre</label>
+                            <input class="form-input" type="text">
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="lastname">Apellido</label>
+                            <input class="form-input" type="text">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-input" type="text">
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="phone">Telefono</label>
+                            <input class="form-input" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-btns">
+                    <button class="add-check-btn" type="submit"><i class="fa-solid fa-check"></i></button>
+                    <button type="reset"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="students-section">
+            <div class="student-card">
+                <h4>Alumnos</h4>
+                <h3>140</h3>
+            </div>
+            <div class="student-card">
+                <h4>Contactados / dia</h4>
+                <h3>62</h3>
+            </div>
+        </div>
+        <div class="search-section">
+            <h2>Busca un alumno / contacto</h2>
+            .
+            <input type="text" placeholder="ej: Rodrigo Scolnic">
+        </div>
+        <div class="lastContact-section">
+            <div class="lastContact-card">
+                <div class="lastContact-mainInfo">
+                    <h3>Julieta Diaz</h3>
+                    <p>12/06/2023</p>
+                </div>
+                <hr>
+                <div class="lastContact-comment">
+                    <div class="comment-content">
+                        <h4>comentario: </h4>
+                        <p>Dijo que lo va a pensar para el año que viene</p>
+                    </div>
+                    <div class="comment-btn">
+                        <button><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="lastContact-info">
+                    <div class="mail-info">
+                        <label for="email">email</label>
+                        <p>juliDiaz@gmail.com</p>
+                    </div>
+                    <div class="phone-info">
+                        <label for="phone">phone</label>
+                        <p>1547986533</p>
+                    </div>
+                    <div class="isStudent">
+                        <label for="isStudent">es alumno</label>
+                        <p>SI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+</body>
+
+<script src="./script/script.js"></script>
+
+</html>

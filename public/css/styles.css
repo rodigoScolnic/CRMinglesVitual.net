@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {box-sizing: border-box; padding: 0; margin: 0; font-family: 'Rubik', sans-serif;}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    background-color: aliceblue;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    left: -220px; 
+    width: 20%;
+    height: 100vh;
+    /* border-radius: 50%; */
+    background-color: crimson;
+
+    transition: all 0.5s;
+}
+
+header ul {
+    list-style: none;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header ul li {
+    transition: all .1s;
+}
+
+header ul li a {
+    border: 3px solid white;
+    padding: 10px;
+    font-size: 30px;
+}
+
+header ul li:hover {
+    transform: scale(1.2);
+}
+
+header ul li a i {
+    color: white;
+}
+
+.arrow-btn-container {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-left-arrow {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.nav-left-arrow i {
+    font-size: 30px;
+    color: white;
+    transition: all .4s;
+}
+
+.header-active {
+    left: -100px;
+}
+
+.icon-active {
+    transform: rotateY(180deg);
+}
+
+#icono {
+    transition: all .5s;
+}
+
+/* --------------------- */
+
+.main-section {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    height: 100vh;
+    width: 80%;
+}
+
+.form-section {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+}
+
+.form-section .form-container {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-section .form-row {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+
+}
+
+.form-section .form-item {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-section .form-item label {
+    height: 20px;
+    color: crimson;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.focused {
+    font-size: 10px;
+}
+
+.form-section .form-item input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid crimson;
+    transition: all 0.5s;
+}
+
+.form-section .form-item input:focus {
+    width: 110%;
+}
+
+.form-section .form-btns {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.form-section .form-btns button {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: crimson;
+    border: none;
+    margin: 0 20px;
+    padding: 5px 10px;
+}
+
+.form-section .form-btns .add-check-btn {
+    background-color: green;
+}
+
+.students-section {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.student-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    background-color: crimson;
+    width: 45%;
+    height: 50%;
+    text-align: center;
+}
+
+.student-card h3 {
+    font-size: 40px;
+}
+
+.search-section {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.search-section h2 {
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.search-section input {
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    width: 75%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid crimson;
+    transition: all .5s;
+}
+
+.search-section input:focus {
+    width: 80%;
+}
+
+.lastContact-section {
+    border: 1px solid rgba(0, 0, 0, 0.1) ;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lastContact-card {
+    background-color: crimson;
+    color: white;
+    height: 95%;
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.lastContact-comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-content p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.lastContact-info {
+    display: flex;
+}
+
+.lastContact-info div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 33%;
+}
+
+.lastContact-info div p{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.comment-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.comment-btn button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
