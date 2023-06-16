@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/header.ejs') %>
+    <section class="main-section">
+        <div class="name-info">
+            <% contacts.forEach(e => { %>
+                <h2> <%= e.firstname %> </h2>
+            <% }) %> 
+        </div>
+        
+    </section>
+</body>
+<script src="./script/script.js"></script>
+</html>

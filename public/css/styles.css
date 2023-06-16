@@ -15,10 +15,9 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    left: -220px; 
+    left: -17%; 
     width: 20%;
     height: 100vh;
-    /* border-radius: 50%; */
     background-color: crimson;
 
     transition: all 0.5s;
@@ -34,12 +33,15 @@ header ul {
 
 header ul li {
     transition: all .1s;
+    margin: 40px 0;
 }
 
 header ul li a {
     border: 3px solid white;
     padding: 10px;
     font-size: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 header ul li:hover {
@@ -167,12 +169,14 @@ header ul li a i {
 }
 
 .form-section .form-btns button {
-    height: 30px;
+    height: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     color: white;
     background-color: crimson;
+    cursor: pointer;
     border: none;
     margin: 0 20px;
     padding: 5px 10px;
@@ -199,6 +203,7 @@ header ul li a i {
     padding: 10px;
     color: white;
     background-color: crimson;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
     width: 45%;
     height: 50%;
     text-align: center;
@@ -257,6 +262,8 @@ header ul li a i {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    transition: all .5s;
 
 }
 
