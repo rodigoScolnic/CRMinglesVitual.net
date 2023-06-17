@@ -3,14 +3,124 @@
     <%- include('partials/head.ejs') %>
 <body>
     <%- include('partials/header.ejs') %>
-    <section class="main-section">
-        <div class="name-info">
-            <% contacts.forEach(e => { %>
-                <h2> <%= e.firstname %> </h2>
-            <% }) %> 
+
+    <section class="filter-menu">
+        <div class="filter-menu-title">
+            <h3>filtros</h3>
         </div>
+        <div class="filter-cards">
+            
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div id="table-container">
+            <table id="my-table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>email</th>
+                    <th>telefono</th>
+                    <th>options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% contacts.forEach(e => { %>
+                        <tr>
+                            <td><%= e.firstname %></td>
+                            <td><%= e.lastname %></td>
+                            <td><%= e.email %></td>
+                            <td><%= e.phone %></td>
+                            <td>
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-delete-left"></i></button>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+              </table>
+              
+        </div>
+        <div id="pagination-container">
+            <button id="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <span id="page-number">1</span>
+            <button id="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        
         
     </section>
 </body>
 <script src="./script/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var table = document.getElementById("my-table");
+  var tbody = table.getElementsByTagName("tbody")[0];
+  var rowsPerPage = 8; // Número de filas por página
+  var currentPage = 1; // Página actual
+  
+  // Calcula el número total de páginas
+  var totalPages = Math.ceil(tbody.rows.length / rowsPerPage);
+  
+  // Función para mostrar las filas correspondientes a la página actual
+  function showRows() {
+    var start = (currentPage - 1) * rowsPerPage;
+    var end = start + rowsPerPage;
+    
+    for (var i = 0; i < tbody.rows.length; i++) {
+      if (i >= start && i < end) {
+        tbody.rows[i].style.display = "";
+      } else {
+        tbody.rows[i].style.display = "none";
+      }
+    }
+  }
+  
+  // Función para actualizar los botones de navegación
+  function updateButtons() {
+    var prevBtn = document.getElementById("prev-btn");
+    var nextBtn = document.getElementById("next-btn");
+    var pageNumber = document.getElementById("page-number");
+    
+    pageNumber.textContent = currentPage;
+    
+    if (currentPage === 1) {
+      prevBtn.disabled = true;
+    } else {
+      prevBtn.disabled = false;
+    }
+    
+    if (currentPage === totalPages) {
+      nextBtn.disabled = true;
+    } else {
+      nextBtn.disabled = false;
+    }
+  }
+  
+  // Muestra las filas de la página inicial al cargar la página
+  showRows();
+  
+  // Actualiza los botones de navegación
+  updateButtons();
+  
+  // Evento del botón "Anterior"
+  document.getElementById("prev-btn").addEventListener("click", function() {
+    if (currentPage > 1) {
+      currentPage--;
+      showRows();
+      updateButtons();
+    }
+  });
+  
+  // Evento del botón "Siguiente"
+  document.getElementById("next-btn").addEventListener("click", function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      showRows();
+      updateButtons();
+    }
+  });
+});
+</script>
 </html>

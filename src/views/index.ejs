@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-btns">
                     <button class="add-check-btn" type="submit"><i class="fa-solid fa-check"></i></button>
-                    <button type="reset"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="delete-check-btn" type="reset"><i class="fa-solid fa-xmark"></i></button>
                 </div>
             </form>
         </div>
@@ -51,7 +51,12 @@
             <input type="text" placeholder="ej: Rodrigo Scolnic">
         </div>
         <div class="lastContact-section">
-            <div class="lastContact-card">
+            <% if(lastContact == undefined){ %>
+                <div class="lastContact-card">
+                    <h2>Aun no has cargado ningun contacto</h2>
+                </div>
+            <% }else{ %>
+                <div class="lastContact-card">
                 <div class="lastContact-mainInfo">
                     <h3><%= lastContact.firstname %></h3>
                     <p><%= lastContact.createdAt %></p>
@@ -86,6 +91,8 @@
                     </div>
                 </div>
             </div>
+            <% } %>
+            
         </div>
         
     </section>

@@ -169,21 +169,31 @@ header ul li a i {
 }
 
 .form-section .form-btns button {
+    font-size: 30px;
     height: 50px;
     width: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     color: white;
-    background-color: crimson;
+    background-color: white;
+    border: 2px solid crimson;
     cursor: pointer;
-    border: none;
     margin: 0 20px;
     padding: 5px 10px;
+    transition: all .5s;
+}
+
+.form-section .form-btns button:hover {
+    transform: scale(1.1);
+}
+
+.delete-check-btn i{
+    color: crimson;
 }
 
 .form-section .form-btns .add-check-btn {
-    background-color: green;
+    color: green;
 }
 
 .students-section {
@@ -294,6 +304,10 @@ header ul li a i {
     margin-top: 10px;
 }
 
+.lastContact-card h2 {
+    text-align: center;
+}
+
 .comment-btn {
     display: flex;
     justify-content: center;
@@ -306,4 +320,87 @@ header ul li a i {
     background-color: transparent;
     color: white;
     cursor: pointer;
+}
+
+#table-container {
+    width: 100%;
+    height: 80%;
+}
+
+table {
+    width: 100%;
+}
+
+
+
+thead {
+    background-color: crimson;
+    color: white;
+}
+
+tbody tr {
+    text-align: center;
+}
+
+td {
+    margin: 0;
+    padding: 15px 0;
+    border: 2px solid crimson;
+}
+
+td button {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    color: crimson;
+    font-size: 20px;
+    margin: 0 5px;
+    padding: 5px;
+    border: 2px solid crimson;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+td button:hover {
+    transform: scale(1.2);
+}
+
+#pagination-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagination-container button{
+    cursor: pointer;
+    margin: 0 20px;
+    color: crimson;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+#pagination-container button:disabled {
+    visibility: hidden;
+}
+
+#pagination-container button:hover{
+    transform: scale(1.3);
+}
+
+#page-number {
+    color: crimson;
+    font-size: 16px;
+    transition: all .5s;
+}
+
+.filter-menu {
+    z-index: -1;
+    position: absolute;
+    left: 5%;
+    width: 10%;
+    height: 100%;
+    background-color: aqua;
 }
