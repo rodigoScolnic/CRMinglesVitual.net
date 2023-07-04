@@ -4,19 +4,10 @@
 <body>
     <%- include('partials/header.ejs') %>
 
-    <section class="filter-menu">
-        <div class="filter-menu-title">
-            <h3>filtros</h3>
-        </div>
-        <div class="filter-cards">
-            
-        </div>
-    </section>
-
     <section class="main-section">
         <div id="table-container">
-            <table id="my-table">
-                <thead>
+            <table id="tablaDatos">
+<!--                 <thead>
                   <tr>
                     <th>Nombre</th>
                     <th>Apellido</th>
@@ -38,7 +29,7 @@
                             </td>
                         </tr>
                     <% }) %>
-                </tbody>
+                </tbody> -->
               </table>
               
         </div>
@@ -54,6 +45,44 @@
 </body>
 <script src="./script/script.js"></script>
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Datos
+  var datos = [
+    { nombre: 'Juan', edad: 25 },
+    { nombre: 'María', edad: 30 },
+    { nombre: 'Pedro', edad: 20 },
+    { nombre: 'Ana', edad: 35 }
+  ];
+
+  // Obtener elementos del DOM
+  var filtroInput = document.getElementById('filtro');
+  var tablaBody = document.querySelector('#tablaDatos tbody');
+
+  // Función de filtrado
+  function filtrarDatos() {
+    var filtro = filtroInput.value.toLowerCase();
+
+    // Limpiar tabla
+    tablaBody.innerHTML = '';
+
+    // Filtrar y mostrar datos
+    datos.forEach(function(item) {
+      if (item.nombre.toLowerCase().includes(filtro)) {
+        var fila = document.createElement('tr');
+        fila.innerHTML = '<td>' + item.nombre + '</td><td>' + item.edad + '</td>';
+        tablaBody.appendChild(fila);
+      }
+    });
+  }
+
+  // Evento de cambio en el campo de filtrado
+  filtroInput.addEventListener('input', filtrarDatos);
+
+  // Mostrar todos los datos inicialmente
+  filtrarDatos();
+});
+
     document.addEventListener("DOMContentLoaded", function() {
   var table = document.getElementById("my-table");
   var tbody = table.getElementsByTagName("tbody")[0];
